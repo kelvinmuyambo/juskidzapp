@@ -1,16 +1,43 @@
-// http://ionicframework.com/docs/theming/
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
 
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+h1,h2,h3,h4,h5{font-weight: 100;}
+
+
+.hd_primary, .item-input-has-focus .label{
+    color: #792a90 !important;
+}
+
+.hd_secondary{
+    color: #14a5a0 !important;
+}
+
+.text-center{
+    text-align: center !important;
+}
+
+.large_font{
+    font-size: 3em !important;
+}
+
+.text-input {
+    border-bottom: solid 1px gainsboro;
+}

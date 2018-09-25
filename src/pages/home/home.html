@@ -1,17 +1,61 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+  <img src="../../assets/imgs/img_logo_light.jpg" />
+  <div padding>
+    <!-- <request-handler *ngIf="!categories"></request-handler> -->
+    <p class="hd_secondary text-center">Helping You Raise Your Kids</p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua.
+    </p>
+    <br />
+    <h5 class="hd_primary">Contact Directory</h5>
+    <ion-card>
+      <ion-list inset>
+        <button ion-item *ngFor="let category of categories">
+          <ion-icon name="arrow-dropright" item-end></ion-icon>
+          {{category.name}}
+        </button>
+        <button ion-button icon-start color="theme" round col-12 (click)="submit()">
+          <ion-icon name="eye"></ion-icon>
+          View Directory
+        </button>
+      </ion-list>
+    </ion-card>
+    <br />
+    <h5 class="hd_primary">Top Events</h5>
+    <ion-card>
+      <img src="https://www.google.co.zw/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj5pqHmstbdAhXCCMAKHRxcD8wQjRx6BAgBEAU&url=https%3A%2F%2Fatlantablackstar.com%2F2015%2F03%2F18%2Famericas-widening-opportunity-gap-devastates-life-chances-of-too-many-black-children%2Fbirthday-cake%2F&psig=AOvVaw3kKQcfGU0-VUyI1F1jfh6w&ust=1537973194499764" />
+      <ion-card-content>
+        <h2 class="hd_secondary">Top Event In Your Area</h2>
+        <p>
+          The most popular industrial group ever, and largely
+          responsible for bringing the music to a mass audience.
+        </p>
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-start clear small>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>120</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-start clear small>
+              <ion-icon name="thumbs-down"></ion-icon>
+              <div>5</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-start clear small>
+              <ion-icon name="text"></ion-icon>
+              <div>4</div>
+            </button>
+          </ion-col>
+          <button ion-button icon-start color="theme" round col-12 (click)="submit()">
+            <ion-icon name="eye"></ion-icon>
+            View Events
+          </button>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
