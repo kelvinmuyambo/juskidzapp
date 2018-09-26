@@ -22,6 +22,7 @@ export class ListingItemComponent {
       .valueChanges()
       .subscribe(icon => {
         this.icon = icon.toString();
+        this.listing.image = this.icon;
       });
   }
 

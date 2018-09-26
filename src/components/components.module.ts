@@ -6,6 +6,7 @@ import { AccountUserDetailsComponent } from './account-user-details/account-user
 import { ListingItemAddComponent } from './listing-item-add/listing-item-add';
 import { ListingItemAddContactComponent } from './listing-item-add-contact/listing-item-add-contact';
 import { ListingItemAddImagesComponent } from './listing-item-add-images/listing-item-add-images';
+import { ListingItemDetailsComponent } from './listing-item-details/listing-item-details';
 @NgModule({
 	declarations: [ListingItemComponent,
     AccountAnonymousComponent,
@@ -13,7 +14,8 @@ import { ListingItemAddImagesComponent } from './listing-item-add-images/listing
     AccountUserDetailsComponent,
     ListingItemAddComponent,
     ListingItemAddContactComponent,
-    ListingItemAddImagesComponent],
+    ListingItemAddImagesComponent,
+    ListingItemDetailsComponent],
 	imports: [],
 	exports: [ListingItemComponent,
     AccountAnonymousComponent,
@@ -21,6 +23,7 @@ import { ListingItemAddImagesComponent } from './listing-item-add-images/listing
     AccountUserDetailsComponent,
     ListingItemAddComponent,
     ListingItemAddContactComponent,
-    ListingItemAddImagesComponent]
+    ListingItemAddImagesComponent,
+    ListingItemDetailsComponent]
 })
 export class ComponentsModule {}

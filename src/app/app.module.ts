@@ -20,9 +20,10 @@ import { AccountAnonymousComponent } from '../components/account-anonymous/accou
 import { AccountAnonymousLoginComponent } from '../components/account-anonymous-login/account-anonymous-login';
 import { AccountUserDetailsComponent } from '../components/account-user-details/account-user-details'
 import { ListingItemComponent } from '../components/listing-item/listing-item';
+import { ListingItemDetailsComponent } from '../components/listing-item-details/listing-item-details';
 import { ListingItemAddComponent } from '../components/listing-item-add/listing-item-add';
-import {ListingItemAddContactComponent} from '../components/listing-item-add-contact/listing-item-add-contact';
-import {ListingItemAddImagesComponent} from '../components/listing-item-add-images/listing-item-add-images';
+import { ListingItemAddContactComponent } from '../components/listing-item-add-contact/listing-item-add-contact';
+import { ListingItemAddImagesComponent } from '../components/listing-item-add-images/listing-item-add-images';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -53,7 +54,8 @@ const firebaseConfig = {
     ListingItemAddImagesComponent,
     AccountAnonymousComponent,
     AccountAnonymousLoginComponent,
-    AccountUserDetailsComponent
+    AccountUserDetailsComponent,
+    ListingItemDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +77,8 @@ const firebaseConfig = {
     AccountAnonymousLoginComponent,
     ListingItemAddComponent,
     ListingItemAddContactComponent,
-    ListingItemAddImagesComponent
+    ListingItemAddImagesComponent,
+    ListingItemDetailsComponent
   ],
   providers: [
     StatusBar,

@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FirebaseServiceProvider } from '../../providers/firebase-service';
 import { ListingItemAddComponent } from '../../components/listing-item-add/listing-item-add';
-import { Country } from '../../model/country';
+import { ListingItemDetailsComponent } from '../../components/listing-item-details/listing-item-details';
 
 
 @IonicPage()
@@ -29,7 +29,9 @@ export class DirectoryPage {
       });
   }
 
-  openListingDetails(event) {
+  openListingDetails(listing) {
+    this.navCtrl.push(ListingItemDetailsComponent, { listing: listing });
+    return;
   }
 
   addNew() {
