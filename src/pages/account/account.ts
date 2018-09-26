@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the AccountPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AngularFireAuth } from '@angular/fire/auth';
+import { FirebaseServiceProvider } from '../../providers/firebase-service';
 
 @IonicPage()
 @Component({
@@ -14,12 +9,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'account.html',
 })
 export class AccountPage {
+  user: firebase.User;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, private aufAuth: AngularFireAuth,
+    public firebaseService: FirebaseServiceProvider) {
+    this.getUserInformation();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AccountPage');
   }
 
+  getUserInformation() {
+    this.aufAuth.authState.subscribe(r => this.user = r);
+  }
 }

@@ -4,5 +4,6 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <h1 ion-text color="primary">Account</h1>
+  <account-anonymous *ngIf="!user" (result)="reload($event)"></account-anonymous>
+  <account-user-details *ngIf="user" [profile]="user" (result)="reload($event)"></account-user-details>
 </ion-content>

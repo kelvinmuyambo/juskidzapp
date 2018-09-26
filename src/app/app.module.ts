@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { GooglePlus } from '@ionic-native/google-plus';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -15,6 +16,9 @@ import { DirectoryPage } from '../pages/directory/directory';
 import { EventsPage } from '../pages/events/events';
 import { AccountPage } from '../pages/account/account';
 
+import { AccountAnonymousComponent } from '../components/account-anonymous/account-anonymous';
+import { AccountAnonymousLoginComponent } from '../components/account-anonymous-login/account-anonymous-login';
+import { AccountUserDetailsComponent } from '../components/account-user-details/account-user-details'
 import { ListingItemComponent } from '../components/listing-item/listing-item';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -40,7 +44,10 @@ const firebaseConfig = {
     AccountPage,
     EventsPage,
     TabsPage,
-    ListingItemComponent
+    ListingItemComponent,
+    AccountAnonymousComponent,
+    AccountAnonymousLoginComponent,
+    AccountUserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -58,13 +65,15 @@ const firebaseConfig = {
     DirectoryPage,
     AccountPage,
     EventsPage,
-    TabsPage
+    TabsPage,
+    AccountAnonymousLoginComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
     FirebaseServiceProvider,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    GooglePlus,
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

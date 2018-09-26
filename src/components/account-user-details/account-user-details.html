@@ -1,0 +1,16 @@
+<h1 class="hd_primary text-center">
+  <ion-icon name="contact" class="large_font"></ion-icon>
+</h1>
+<h4 class="hd_primary text-center">{{profile.displayName}}</h4>
+<br />
+<ion-card>
+  <ion-card-content>
+    <p><b>Email : </b> {{profile.email}}</p>
+  </ion-card-content>
+</ion-card>
+
+<br />
+<button (click)="logout()" col-6 offset-5 ion-button icon-start color="secondary" round>
+  <ion-icon name="log-out"></ion-icon>
+  Sign Out
+</button>
