@@ -17,7 +17,7 @@ export class HomePage {
   }
 
   async getCategories() {
-    this.firebaseService.afd.list<any>('listing-category')
+    this.firebaseService.afd.list<any>('listing-category', ref => ref.limitToFirst(5))
       .valueChanges()
       .subscribe(r => this.categories = r);
   }

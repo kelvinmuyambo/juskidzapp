@@ -1,0 +1,25 @@
+<ion-card>
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar item-start>
+          <img *ngIf="listing.image" height="50" width="50" src="{{listing.image}}">
+          <ion-icon name="aperture" *ngIf="!listing.image" color="secondary" style="font-size:2em;"></ion-icon>
+        </ion-avatar>
+        <h2>{{listing.title}}</h2>
+        <p>{{listing.description}}</p>
+        <button (click)="view()" ion-button clear item-end color="theme">View</button>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="secondary">
+          <ion-icon name="call"></ion-icon>
+          Call
+        </button>
+        <button ion-button color="primary">
+          <ion-icon name="mail"></ion-icon>
+          Email
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-card>

@@ -15,6 +15,8 @@ import { DirectoryPage } from '../pages/directory/directory';
 import { EventsPage } from '../pages/events/events';
 import { AccountPage } from '../pages/account/account';
 
+import { ListingItemComponent } from '../components/listing-item/listing-item';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FirebaseServiceProvider } from '../providers/firebase-service';
@@ -37,7 +39,8 @@ const firebaseConfig = {
     DirectoryPage,
     AccountPage,
     EventsPage,
-    TabsPage
+    TabsPage,
+    ListingItemComponent
   ],
   imports: [
     BrowserModule,
