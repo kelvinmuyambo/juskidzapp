@@ -11,6 +11,9 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { DirectoryPage } from '../pages/directory/directory';
+import { EventsPage } from '../pages/events/events';
+import { AccountPage } from '../pages/account/account';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -31,6 +34,9 @@ const firebaseConfig = {
     AboutPage,
     ContactPage,
     HomePage,
+    DirectoryPage,
+    AccountPage,
+    EventsPage,
     TabsPage
   ],
   imports: [
@@ -46,6 +52,9 @@ const firebaseConfig = {
     AboutPage,
     ContactPage,
     HomePage,
+    DirectoryPage,
+    AccountPage,
+    EventsPage,
     TabsPage
   ],
   providers: [
