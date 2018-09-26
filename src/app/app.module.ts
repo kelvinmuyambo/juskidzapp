@@ -20,6 +20,9 @@ import { AccountAnonymousComponent } from '../components/account-anonymous/accou
 import { AccountAnonymousLoginComponent } from '../components/account-anonymous-login/account-anonymous-login';
 import { AccountUserDetailsComponent } from '../components/account-user-details/account-user-details'
 import { ListingItemComponent } from '../components/listing-item/listing-item';
+import { ListingItemAddComponent } from '../components/listing-item-add/listing-item-add';
+import {ListingItemAddContactComponent} from '../components/listing-item-add-contact/listing-item-add-contact';
+import {ListingItemAddImagesComponent} from '../components/listing-item-add-images/listing-item-add-images';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -45,6 +48,9 @@ const firebaseConfig = {
     EventsPage,
     TabsPage,
     ListingItemComponent,
+    ListingItemAddComponent,
+    ListingItemAddContactComponent,
+    ListingItemAddImagesComponent,
     AccountAnonymousComponent,
     AccountAnonymousLoginComponent,
     AccountUserDetailsComponent
@@ -66,7 +72,10 @@ const firebaseConfig = {
     AccountPage,
     EventsPage,
     TabsPage,
-    AccountAnonymousLoginComponent
+    AccountAnonymousLoginComponent,
+    ListingItemAddComponent,
+    ListingItemAddContactComponent,
+    ListingItemAddImagesComponent
   ],
   providers: [
     StatusBar,

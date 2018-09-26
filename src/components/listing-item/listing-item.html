@@ -3,8 +3,8 @@
     <ion-item-sliding>
       <ion-item>
         <ion-avatar item-start>
-          <img *ngIf="listing.image" height="50" width="50" src="{{listing.image}}">
-          <ion-icon name="aperture" *ngIf="!listing.image" color="secondary" style="font-size:2em;"></ion-icon>
+          <img *ngIf="icon" height="50" width="50" src="{{icon}}">
+          <ion-icon name="aperture" *ngIf="!icon" color="secondary" style="font-size:2em;"></ion-icon>
         </ion-avatar>
         <h2>{{listing.title}}</h2>
         <p>{{listing.description}}</p>

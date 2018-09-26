@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FirebaseServiceProvider } from '../../providers/firebase-service';
+import { ListingItemAddComponent } from '../../components/listing-item-add/listing-item-add';
+import { Country } from '../../model/country';
 
 
 @IonicPage()
@@ -28,5 +30,10 @@ export class DirectoryPage {
   }
 
   openListingDetails(event) {
+  }
+
+  addNew() {
+    this.navCtrl.push(ListingItemAddComponent);
+    return;
   }
 }
