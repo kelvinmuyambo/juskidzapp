@@ -18,7 +18,8 @@ import { AccountPage } from '../pages/account/account';
 
 import { AccountAnonymousComponent } from '../components/account-anonymous/account-anonymous';
 import { AccountAnonymousLoginComponent } from '../components/account-anonymous-login/account-anonymous-login';
-import { AccountUserDetailsComponent } from '../components/account-user-details/account-user-details'
+import { AccountUserDetailsComponent } from '../components/account-user-details/account-user-details';
+import { EventItemComponent } from '../components/event-item/event-item';
 import { ListingItemComponent } from '../components/listing-item/listing-item';
 import { ListingItemDetailsComponent } from '../components/listing-item-details/listing-item-details';
 import { ListingItemAddComponent } from '../components/listing-item-add/listing-item-add';
@@ -48,14 +49,15 @@ const firebaseConfig = {
     AccountPage,
     EventsPage,
     TabsPage,
+    EventItemComponent,
     ListingItemComponent,
     ListingItemAddComponent,
     ListingItemAddContactComponent,
     ListingItemAddImagesComponent,
+    ListingItemDetailsComponent,
     AccountAnonymousComponent,
     AccountAnonymousLoginComponent,
-    AccountUserDetailsComponent,
-    ListingItemDetailsComponent
+    AccountUserDetailsComponent
   ],
   imports: [
     BrowserModule,
