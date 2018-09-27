@@ -6,10 +6,11 @@ export class Listing {
     image: string;
     images: Array<any>;
     isActive: boolean = false;
-    uid: string;
-    date: Date = new Date();
     likes: Array<string> = [];
     dislikes: Array<string> = [];
-    comments: Array<any> = [];
     contact_infomation: Array<any> = [];
+    comments: Array<any> = [];
+    date: Date = new Date();
+    deadline: Date;
+    uid: string;
 }

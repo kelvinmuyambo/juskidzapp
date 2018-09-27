@@ -4,11 +4,15 @@
 </h1>
 <h4 class="hd_primary text-center">You are not signed in</h4>
 <br />
-<button (click)="login()" ion-button icon-start color="theme" round col-8 offset-2>
+<button (click)="login()" ion-button icon-start color="theme" round col-8 offset-2 large>
   <ion-icon name="log-in"></ion-icon>
   Sign In
 </button>
-<button (click)="register()" ion-button icon-start color="secondary" round col-8 offset-2>
+<button (click)="register()" ion-button icon-start color="secondary" round col-8 offset-2 large>
   <ion-icon name="checkmark-circle"></ion-icon>
   Sign Up
+</button>
+<button ion-button icon-start color="danger" round col-8 offset-2 (click)="googleLogin()" large>
+  <ion-icon name="logo-googleplus"></ion-icon>
+  Google+
 </button>

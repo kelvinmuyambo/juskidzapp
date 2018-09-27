@@ -22,11 +22,8 @@ export class DirectoryPage {
   }
 
   getListings() {
-    this.firebaseService.afd.list<any>('listing')
-      .valueChanges()
-      .subscribe(listings => {
-        this.listings = listings;
-      });
+    this.firebaseService.get('listing', (listings) =>
+      this.listings = listings);
   }
 
   openListingDetails(listing) {

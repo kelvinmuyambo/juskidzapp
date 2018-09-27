@@ -7,23 +7,21 @@ import { FirebaseServiceProvider } from '../../providers/firebase-service';
   templateUrl: 'listing-item.html'
 })
 export class ListingItemComponent {
-  icon:string;
+  icon: string;
   @Input() listing: Listing;
   @Output() result = new EventEmitter<any>();
-  constructor(private firebaseSvc : FirebaseServiceProvider) {
+  constructor(private firebaseSvc: FirebaseServiceProvider) {
   }
 
   ngOnInit(): void {
     this.getIcon();
   }
 
-  getIcon(){
-    this.firebaseSvc.get('/listing-image/' + this.listing.image)
-      .valueChanges()
-      .subscribe(icon => {
-        this.icon = icon.toString();
-        this.listing.image = this.icon;
-      });
+  getIcon() {
+    this.firebaseSvc.getNoLoad('/listing-image/' + this.listing.image, (icon) => {
+      this.icon = icon.toString();
+      this.listing.image = this.icon;
+    });
   }
 
   view() {

@@ -16,10 +16,7 @@ export class HomePage {
   ionViewDidLoad(): void {
   }
 
-  async getCategories() {
-    this.firebaseService.afd.list<any>('listing-category', ref => ref.limitToFirst(5))
-      .valueChanges()
-      .subscribe(r => this.categories = r);
+  getCategories() {
+    this.firebaseService.take('listing-category', 5, (result) => this.categories = result);
   }
-
 }

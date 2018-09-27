@@ -37,11 +37,7 @@ export class ListingItemAddContactComponent {
   }
 
   getCountries() {
-    this.firebaseService.afd.list('/country/')
-      .valueChanges()
-      .subscribe(countries => {
-        console.log(countries);
-        this.countries = countries;
-      });
+    this.firebaseService.get('/country/', (countries) =>
+      this.countries = countries);
   }
 }

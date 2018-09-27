@@ -20,11 +20,8 @@ export class ListingItemDetailsComponent {
 
   loadImages() {
     this.listing.images.forEach(image => {
-      this.firebaseService.get('/listing-image/' + image.data)
-        .valueChanges()
-        .subscribe(r => {
-          this.images.push(new ListingImage(r.toString()));
-        });
+      this.firebaseService.getNoLoad('/listing-image/' + image.data, (r) =>
+        this.images.push(new ListingImage(r.toString())))
     })
   }
 }

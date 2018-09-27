@@ -61,12 +61,11 @@ export class AccountAnonymousLoginComponent {
   async webGoogleLogin(): Promise<void> {
     try {
       const provider = new firebase.auth.GoogleAuthProvider();
-      const credential = await this.afAuth.auth.signInWithPopup(provider);
+      await this.afAuth.auth.signInWithPopup(provider);
       this.navCtrl.setRoot(AccountPage);
     } catch (err) {
       console.log(err);
     }
-
   }
 
   async googleLogin() {

@@ -5,4 +5,10 @@
 </ion-header>
 <ion-content padding>
   <h1 ion-text color="primary">Events</h1>
+  <p ion-text color="secondary">Find the best event for your kids..</p>
+  <br />
+  <button *ngIf="user" (click)="addNew()" ion-button icon-start color="primary" round col-4 offset-8>
+    <ion-icon name="add-circle"></ion-icon>
+    New
+  </button>
 </ion-content>

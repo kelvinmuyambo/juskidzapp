@@ -19,14 +19,14 @@
           <ion-input type="password" [(ngModel)]="login.password"></ion-input>
         </ion-item>
         <br />
-        <button ion-button icon-start color="primary" round col-8 offset-2 (click)="submit()">
+        <button ion-button icon-start color="primary" round col-8 offset-2 (click)="submit()" large>
           <ion-icon name="log-in"></ion-icon>
           Sign In
         </button>
-        <button ion-button icon-start color="danger" round col-8 offset-2 (click)="googleLogin()">
+        <!-- <button ion-button icon-start color="danger" round col-8 offset-2 (click)="googleLogin()">
           <ion-icon name="logo-googleplus"></ion-icon>
           Google+
-        </button>
+        </button> -->
       </ion-list>
     </ion-card-content>
   </ion-card>

@@ -72,7 +72,12 @@ $colors: (
 
 @import "ionic.theme.default";
 
-
+$loading-ios-background: transparent;
+$loading-md-background: $loading-ios-background;
+$loading-wp-background: $loading-ios-background;
+$loading-md-box-shadow: none;
+$loading-ios-spinner-color:white;
+$loading-md-spinner-color:white;
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:

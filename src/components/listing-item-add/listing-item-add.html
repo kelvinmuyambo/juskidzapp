@@ -23,7 +23,14 @@
           <ion-textarea type="text" [(ngModel)]="listing.description"></ion-textarea>
         </ion-item>
         <br />
-        <button ion-button color="secondary" round col-8 offset-2 (click)="submit()" icon-end>
+        <ion-item>
+          <ion-label>Listing Category</ion-label>
+          <ion-select [(ngModel)]="listing.category">
+            <ion-option [value]="c" *ngFor="let c of categories">{{c.name}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <br />
+        <button ion-button color="secondary" round col-8 offset-2 (click)="submit()" icon-end large>
           Next
           <ion-icon name="ios-arrow-forward-outline"></ion-icon>
         </button>

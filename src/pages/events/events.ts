@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { FirebaseServiceProvider } from '../../providers/firebase-service';
 
-/**
- * Generated class for the EventsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -14,12 +10,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'events.html',
 })
 export class EventsPage {
+  events: Array<any>;
+  user: firebase.User;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams,
+    public firebaseService: FirebaseServiceProvider) {
+    this.afAuth.authState.subscribe(user => this.user = user);
+    this.getEvents();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EventsPage');
+  getEvents() {
+    this.firebaseService.get('events', (events) =>
+      this.events = events);
   }
-
 }
