@@ -11,4 +11,7 @@
     <ion-icon name="add-circle"></ion-icon>
     New
   </button>
+  <ion-row>
+    <event-item [event]="event" *ngFor="let event of events" (result)="openEvent($event)"></event-item>
+  </ion-row>
 </ion-content>

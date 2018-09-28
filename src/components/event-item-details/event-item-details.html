@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <ion-item>
+      <ion-avatar item-start>
+        <img height="50" width="50" src="../../assets/imgs/logo.png" />
+      </ion-avatar>
+      <h2>Events</h2>
+    </ion-item>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngIf="event">
+  <div>
+    <ion-slides pager>
+      <ion-slide>
+        <img src="{{event.image}}" />
+      </ion-slide>
+      <!-- <ion-slide *ngFor="let image of images">
+        <img src="{{image.data}}" />
+      </ion-slide> -->
+    </ion-slides>
+  </div>
+  <ion-card>
+    <ion-card-header>
+      <h1 ion-text color="primary">{{event.title}}</h1>
+      <!-- <p ion-text color="secondary">{{listing.description}}</p> -->
+      <br />
+      <ion-icon name="thumbs-up" col-2 offset-4 color="secondary" class="large">&nbsp;28</ion-icon>
+      <ion-icon name="thumbs-down" col-2 color="danger" class="large">&nbsp;6</ion-icon>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list no-lines>
+        <ion-item>
+          <h2>
+            <ion-icon name="call"></ion-icon> &nbsp;&nbsp; +263 775 306 052
+          </h2>
+        </ion-item>
+        <ion-item>
+          <h2>
+            <ion-icon name="mail"></ion-icon> &nbsp;&nbsp; kelvinmuyambo@gmail.com
+          </h2>
+        </ion-item>
+        <ion-item>
+          <h2>
+            <ion-icon name="pin"></ion-icon> &nbsp;&nbsp; 123 Glenara Rd, Harare
+          </h2>
+        </ion-item>
+        <ion-item>
+          <button ion-button icon-start color="theme" round col-12 large>
+            <ion-icon name="hand"></ion-icon>
+            RSVP
+          </button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <br />
+  <br />
+</ion-content>

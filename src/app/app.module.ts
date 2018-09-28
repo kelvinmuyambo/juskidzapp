@@ -20,6 +20,7 @@ import { AccountAnonymousComponent } from '../components/account-anonymous/accou
 import { AccountAnonymousLoginComponent } from '../components/account-anonymous-login/account-anonymous-login';
 import { AccountUserDetailsComponent } from '../components/account-user-details/account-user-details';
 import { EventItemComponent } from '../components/event-item/event-item';
+import { EventItemDetailsComponent } from '../components/event-item-details/event-item-details';
 import { ListingItemComponent } from '../components/listing-item/listing-item';
 import { ListingItemDetailsComponent } from '../components/listing-item-details/listing-item-details';
 import { ListingItemAddComponent } from '../components/listing-item-add/listing-item-add';
@@ -50,6 +51,7 @@ const firebaseConfig = {
     EventsPage,
     TabsPage,
     EventItemComponent,
+    EventItemDetailsComponent,
     ListingItemComponent,
     ListingItemAddComponent,
     ListingItemAddContactComponent,
@@ -77,6 +79,7 @@ const firebaseConfig = {
     EventsPage,
     TabsPage,
     AccountAnonymousLoginComponent,
+    EventItemDetailsComponent,
     ListingItemAddComponent,
     ListingItemAddContactComponent,
     ListingItemAddImagesComponent,

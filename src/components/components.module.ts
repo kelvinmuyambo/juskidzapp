@@ -8,6 +8,7 @@ import { ListingItemAddContactComponent } from './listing-item-add-contact/listi
 import { ListingItemAddImagesComponent } from './listing-item-add-images/listing-item-add-images';
 import { ListingItemDetailsComponent } from './listing-item-details/listing-item-details';
 import { EventItemComponent } from './event-item/event-item';
+import { EventItemDetailsComponent } from './event-item-details/event-item-details';
 @NgModule({
 	declarations: [ListingItemComponent,
     AccountAnonymousComponent,
@@ -17,7 +18,8 @@ import { EventItemComponent } from './event-item/event-item';
     ListingItemAddContactComponent,
     ListingItemAddImagesComponent,
     ListingItemDetailsComponent,
-    EventItemComponent],
+    EventItemComponent,
+    EventItemDetailsComponent],
 	imports: [],
 	exports: [ListingItemComponent,
     AccountAnonymousComponent,
@@ -27,6 +29,7 @@ import { EventItemComponent } from './event-item/event-item';
     ListingItemAddContactComponent,
     ListingItemAddImagesComponent,
     ListingItemDetailsComponent,
-    EventItemComponent]
+    EventItemComponent,
+    EventItemDetailsComponent]
 })
 export class ComponentsModule {}

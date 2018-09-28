@@ -12,6 +12,7 @@ export class EventItemComponent {
 
   constructor(private firebaseSvc: FirebaseServiceProvider) {
   }
+  
   getIcon() {
     this.firebaseSvc.getNoLoad('/event-image/' + this.event.image, (icon) => {
       this.icon = icon.toString();

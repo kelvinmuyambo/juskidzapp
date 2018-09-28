@@ -1,4 +1,35 @@
-<!-- Generated template for the EventItemComponent component -->
-<div>
-  {{text}}
-</div>
+<!-- <ion-card>
+  <img src="https://atlantablackstar.com/wp-content/uploads/2015/03/birthday-cake.jpg" />
+  <ion-card-content>
+    <ion-card-title ion-text color="secondary">
+      Birthday Party Host
+    </ion-card-title>
+    <p>
+      Assist the Birthday Party Coordinator in ncessary tasks. The Bolingbrook Park District is seeking a part time
+      Birthday Party Host to work at our Pelican Harbor...
+    </p>
+  </ion-card-content>
+</ion-card> -->
+
+<ion-card>
+  <img src="{{event.image}}" />
+  <ion-card-content>
+    <p ion-text color="primary">{{event.title}}</p>
+    <p ion-text><b><small>29 Feb 2018 @10:00, 123 Glenara Rd</small></b></p>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small color="secondary">
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>12</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-start clear small (click)="view()">
+          <ion-icon name="eye"></ion-icon>
+          <div>View </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+
+</ion-card>

@@ -14,7 +14,6 @@ export class ListingItemDetailsComponent {
   images: Array<any> = [];
   constructor(params: NavParams, public firebaseService: FirebaseServiceProvider) {
     this.listing = params.data.listing;
-    console.log(this.listing);
     this.loadImages();
   }
 
