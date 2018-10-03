@@ -12,10 +12,12 @@
 </ion-card> -->
 
 <ion-card>
-  <img src="{{event.image}}" />
+  <img *ngIf="icon" src="{{icon}}">
+  <ion-icon name="aperture" *ngIf="!icon" color="secondary" style="font-size:10em; text-align: center;width: 100%;"></ion-icon>
   <ion-card-content>
     <p ion-text color="primary">{{event.title}}</p>
-    <p ion-text><b><small>29 Feb 2018 @10:00, 123 Glenara Rd</small></b></p>
+    <p ion-text><b><small>{{event.town}}</small></b></p>
+    <p ion-text><small>{{event.startDate  | date : 'EEE dd MMM yyy'}}</small></p>
     <ion-row>
       <ion-col>
         <button ion-button icon-start clear small color="secondary">

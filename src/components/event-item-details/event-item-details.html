@@ -15,15 +15,15 @@
       <ion-slide>
         <img src="{{event.image}}" />
       </ion-slide>
-      <!-- <ion-slide *ngFor="let image of images">
+      <ion-slide *ngFor="let image of images">
         <img src="{{image.data}}" />
-      </ion-slide> -->
+      </ion-slide>
     </ion-slides>
   </div>
   <ion-card>
     <ion-card-header>
       <h1 ion-text color="primary">{{event.title}}</h1>
-      <!-- <p ion-text color="secondary">{{listing.description}}</p> -->
+      <p ion-text color="secondary">{{event.description}}</p>
       <br />
       <ion-icon name="thumbs-up" col-2 offset-4 color="secondary" class="large">&nbsp;28</ion-icon>
       <ion-icon name="thumbs-down" col-2 color="danger" class="large">&nbsp;6</ion-icon>
@@ -32,28 +32,31 @@
       <ion-list no-lines>
         <ion-item>
           <h2>
-            <ion-icon name="call"></ion-icon> &nbsp;&nbsp; +263 775 306 052
+            <ion-icon name="time" color="secondary"></ion-icon> &nbsp;&nbsp;
+            {{event.startDate | date : 'EEE dd MMM yyyy'}}
+            {{event.startTime}}
           </h2>
         </ion-item>
         <ion-item>
           <h2>
-            <ion-icon name="mail"></ion-icon> &nbsp;&nbsp; kelvinmuyambo@gmail.com
+            <ion-icon name="time" color="primary"></ion-icon> &nbsp;&nbsp;
+            {{event.endDate | date : 'EEE dd MMM yyyy'}}
+            {{event.endTime}}
           </h2>
         </ion-item>
-        <ion-item>
+        <ion-item *ngFor="let item of event.contact_infomation">
           <h2>
-            <ion-icon name="pin"></ion-icon> &nbsp;&nbsp; 123 Glenara Rd, Harare
+            <ion-icon name="{{item.type}}"></ion-icon> &nbsp;&nbsp; {{item.value}}
           </h2>
-        </ion-item>
-        <ion-item>
-          <button ion-button icon-start color="theme" round col-12 large>
-            <ion-icon name="hand"></ion-icon>
-            RSVP
-          </button>
         </ion-item>
       </ion-list>
+      <br />
+      <button ion-button icon-start color="primary" round col-8 offset-2 (click)="rsvp()" large>
+        <ion-icon name="hand"></ion-icon>
+        RSVP
+      </button>
+      <br />
     </ion-card-content>
   </ion-card>
-  <br />
   <br />
 </ion-content>
