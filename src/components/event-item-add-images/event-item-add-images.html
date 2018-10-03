@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><img height="50" src="../../assets/imgs/img_logo_light.png" /></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <h2 class="hd_secondary text-center"><strong>4 / 4</strong></h2>
+      <h2 class="hd_primary text-center">Add Pictures</h2>
+
+      <ion-label stacked class="upload_label">tap below to select an image #1</ion-label>
+      <label class="fileContainer">
+        <img id="event-image1" class="upload_image" src="../../assets/imgs/upload_image.png" />
+        <input type="file" (change)="fileChange($event, 1)" />
+      </label>
+      <br />
+      <ion-label stacked class="upload_label">tap below to select an image #2</ion-label>
+      <label class="fileContainer">
+        <img id="event-image2" class="upload_image" src="../../assets/imgs/upload_image.png" />
+        <input type="file" (change)="fileChange($event, 2)" />
+      </label>
+      <br />
+      <ion-label stacked class="upload_label">tap below to select an image #3</ion-label>
+      <label class="fileContainer">
+        <img id="event-image3" class="upload_image" src="../../assets/imgs/upload_image.png" />
+        <input type="file" (change)="fileChange($event, 3)" />
+      </label>
+      <br />
+      <button ion-button color="primary" round col-8 offset-2 (click)="submit()" icon-start large>
+        <ion-icon name="checkmark-circle"></ion-icon>
+        Add Event
+      </button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

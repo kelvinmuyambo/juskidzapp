@@ -30,6 +30,10 @@ import { ListingItemAddImagesComponent } from '../components/listing-item-add-im
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FirebaseServiceProvider } from '../providers/firebase-service';
+import { EventItemAddComponent } from '../components/event-item-add/event-item-add';
+import { EventItemAddContactComponent } from '../components/event-item-add-contact/event-item-add-contact';
+import { EventItemAddImagesComponent } from '../components/event-item-add-images/event-item-add-images';
+import { EventItemAddDatesComponent } from '../components/event-item-add-dates/event-item-add-dates';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCdHuyelKbfYDaLKxnlxDL2aQWe0Uf9heE",
@@ -51,6 +55,10 @@ const firebaseConfig = {
     EventsPage,
     TabsPage,
     EventItemComponent,
+    EventItemAddComponent,
+    EventItemAddContactComponent,
+    EventItemAddImagesComponent,
+    EventItemAddDatesComponent,
     EventItemDetailsComponent,
     ListingItemComponent,
     ListingItemAddComponent,
@@ -79,6 +87,10 @@ const firebaseConfig = {
     EventsPage,
     TabsPage,
     AccountAnonymousLoginComponent,
+    EventItemAddComponent,
+    EventItemAddContactComponent,
+    EventItemAddImagesComponent,
+    EventItemAddDatesComponent,
     EventItemDetailsComponent,
     ListingItemAddComponent,
     ListingItemAddContactComponent,

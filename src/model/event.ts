@@ -1,4 +1,4 @@
-export class Listing {
+export class Event {
     title: string;
     description: string;
     town: string;
@@ -11,6 +11,10 @@ export class Listing {
     contact_infomation: Array<any> = [];
     comments: Array<any> = [];
     date: Date = new Date();
-    deadline: Date;
+    startDate: any;
+    endDate: any;
+    startTime: any = '10:00';
+    endTime: any = '16:00';
     uid: string;
+
 }

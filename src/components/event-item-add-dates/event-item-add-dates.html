@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><img height="50" src="../../assets/imgs/img_logo_light.png" /></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <h2 class="hd_secondary text-center"><strong>2 / 4</strong></h2>
+      <h2 class="hd_primary text-center">Event Information</h2>
+      <br />
+      <ion-list *ngIf="event">
+        <ion-item>
+          <ion-label>Start Date</ion-label>
+          <ion-datetime displayFormat="DDD MMM DD YYYY" [(ngModel)]="event.startDate"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Start Time</ion-label>
+          <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.startTime"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>End Date</ion-label>
+          <ion-datetime displayFormat="DDD MMM DD YYYY" [(ngModel)]="event.endDate"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>End Time</ion-label>
+          <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.endTime"></ion-datetime>
+        </ion-item>
+      </ion-list>
+      <br />
+      <button ion-button color="secondary" round col-8 offset-2 (click)="submit()" icon-end large>
+        Next
+        <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+      </button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

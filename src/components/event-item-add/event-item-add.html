@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><img height="50" src="../../assets/imgs/img_logo_light.png" /></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <h2 class="hd_secondary text-center"><strong>1 / 4</strong></h2>
+      <h2 class="hd_primary text-center">Basic Information</h2>
+      <ion-label stacked class="upload_label">tap below to select an image</ion-label>
+      <label class="fileContainer">
+        <img id="event-image" class="upload_image" src="../../assets/imgs/upload_image.png" />
+        <input type="file" (change)="fileChange($event)" />
+      </label>
+      <ion-list>
+        <ion-item>
+          <ion-label stacked>Title/Company Name</ion-label>
+          <ion-input type="text" value="" [(ngModel)]="event.title"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Brief Description</ion-label>
+          <ion-textarea type="text" [(ngModel)]="event.description"></ion-textarea>
+        </ion-item>
+        <br />
+        <ion-item>
+          <ion-label>Event Category</ion-label>
+          <ion-select [(ngModel)]="event.category">
+            <ion-option [value]="c" *ngFor="let c of categories">{{c.name}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <br />
+        <button ion-button color="secondary" round col-8 offset-2 (click)="submit()" icon-end large>
+          Next
+          <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+        </button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
