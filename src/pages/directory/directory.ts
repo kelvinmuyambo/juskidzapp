@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { FirebaseServiceProvider } from '../../providers/firebase-service';
 import { ListingItemAddComponent } from '../../components/listing-item-add/listing-item-add';
 import { ListingItemDetailsComponent } from '../../components/listing-item-details/listing-item-details';
+import { Listing } from '../../model/listing';
 
 
 @IonicPage()
@@ -12,7 +13,7 @@ import { ListingItemDetailsComponent } from '../../components/listing-item-detai
   templateUrl: 'directory.html',
 })
 export class DirectoryPage {
-  listings: Array<any>;
+  listings: Array<Listing>;
   user: firebase.User;
 
   constructor(private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams,
@@ -22,8 +23,9 @@ export class DirectoryPage {
   }
 
   getListings() {
-    this.firebaseService.get('listing', (listings) =>
-      this.listings = listings);
+    this.firebaseService.get('listing', (listings: Array<Listing>) =>{
+      this.listings = listings.filter(f => f.isActive);
+    });
   }
 
   openListingDetails(listing) {

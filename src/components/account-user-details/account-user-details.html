@@ -2,13 +2,18 @@
   <ion-icon name="contact" class="user-icon" large color="primary"></ion-icon>
 </h1>
 <h4 class="hd_primary text-center">{{profile.displayName}}</h4>
+<p class="hd_secondary text-center"><small><b>Email : </b> {{profile.email}}</small></p>
 <br />
 <ion-card>
   <ion-card-content>
-    <p><b>Email : </b> {{profile.email}}</p>
+    <ion-card-header>
+      My Listing
+    </ion-card-header>
+    <ion-list>
+      <user-listing-item [listing]="item" *ngFor="let item of listings"></user-listing-item>
+    </ion-list>
   </ion-card-content>
 </ion-card>
-
 <br />
 <button (click)="logout()" col-6 offset-5 ion-button icon-start color="secondary" round large>
   <ion-icon name="log-out"></ion-icon>

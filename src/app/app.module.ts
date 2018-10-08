@@ -7,6 +7,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { GooglePlus } from '@ionic-native/google-plus';
+import { Facebook } from '@ionic-native/facebook'
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -34,6 +35,7 @@ import { EventItemAddComponent } from '../components/event-item-add/event-item-a
 import { EventItemAddContactComponent } from '../components/event-item-add-contact/event-item-add-contact';
 import { EventItemAddImagesComponent } from '../components/event-item-add-images/event-item-add-images';
 import { EventItemAddDatesComponent } from '../components/event-item-add-dates/event-item-add-dates';
+import { UserListingItemComponent } from '../components/user-listing-item/user-listing-item';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCdHuyelKbfYDaLKxnlxDL2aQWe0Uf9heE",
@@ -67,7 +69,8 @@ const firebaseConfig = {
     ListingItemDetailsComponent,
     AccountAnonymousComponent,
     AccountAnonymousLoginComponent,
-    AccountUserDetailsComponent
+    AccountUserDetailsComponent,
+    UserListingItemComponent
   ],
   imports: [
     BrowserModule,
@@ -102,6 +105,7 @@ const firebaseConfig = {
     SplashScreen,
     FirebaseServiceProvider,
     GooglePlus,
+    Facebook,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

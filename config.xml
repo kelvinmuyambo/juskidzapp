@@ -85,5 +85,10 @@
     <plugin name="cordova-plugin-googleplus" spec="^5.3.2">
         <variable name="PLAY_SERVICES_VERSION" value="11.8.0" />
     </plugin>
+    <plugin name="cordova-plugin-facebook4" spec="^3.0.0">
+        <variable name="APP_ID" value="692020507848971" />
+        <variable name="APP_NAME" value="Just Kidz" />
+        <variable name="FACEBOOK_ANDROID_SDK_VERSION" value="4.36.0" />
+    </plugin>
     <engine name="android" spec="^7.1.1" />
 </widget>

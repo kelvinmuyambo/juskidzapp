@@ -1,0 +1,8 @@
+<ion-item>
+  <ion-avatar item-start>
+    <img *ngIf="icon" height="60" width="60" src="{{icon}}">
+    <ion-icon name="pin" *ngIf="!icon" color="secondary" style="font-size:2.5em;"></ion-icon>
+  </ion-avatar>
+  <ion-label>{{listing.title}}</ion-label>
+  <ion-toggle checked="listing.isActive" (click)="toggle()"></ion-toggle>
+</ion-item>

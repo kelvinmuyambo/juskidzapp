@@ -5,6 +5,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { GooglePlus } from '@ionic-native/google-plus';
 import firebase from 'firebase';
 import { AccountPage } from '../../pages/account/account';
+import { Facebook } from '@ionic-native/facebook';
 
 
 @Component({
@@ -17,7 +18,8 @@ export class AccountAnonymousComponent {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private afAuth: AngularFireAuth, private loadingController: LoadingController,
     public alertCtrl: AlertController,
-    private gplus: GooglePlus, private platform: Platform) {
+    private gplus: GooglePlus, private platform: Platform,
+    public facebook: Facebook) {
   }
 
   register() {
@@ -44,8 +46,7 @@ export class AccountAnonymousComponent {
   async nativeGoogleLogin() {
     try {
       this.gplus.login({
-        'webClientId': '47521912671-rh8optei2mogqljg9escuh5fe1pmm964.apps.googleusercontent.com',
-        'offline': true
+        'webClientId': '47521912671-rh8optei2mogqljg9escuh5fe1pmm964.apps.googleusercontent.com'
       }).then(result => {
         this.loginViaGoogle(result);
       }).catch(err => {
@@ -74,6 +75,22 @@ export class AccountAnonymousComponent {
     } else {
       await this.webGoogleLogin();
     }
+  }
+
+  async facebookLogin() {
+    await this.facebook.login(['public_profile', 'user_friends', 'email'])
+      .then(response => {
+        const facebookCredential = firebase.auth.FacebookAuthProvider
+          .credential(response.authResponse.accessToken);
+        firebase.auth().signInWithCredential(facebookCredential)
+          .then(success => {
+            this.openAlert("Login", "Hi, " + success.displayName);
+          }).catch((error) => {
+            this.openAlert("Firebase Error: ", JSON.stringify(error));
+          });
+      }).catch((error) => {
+        this.openAlert("Facebook Error: ", JSON.stringify(error));
+      });
   }
 
   dismissLoader() {

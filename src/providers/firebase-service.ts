@@ -38,6 +38,16 @@ export class FirebaseServiceProvider {
       });
   }
 
+  getIcon(url: string, func: any) {
+    this.getNoLoad(url, (icon) => {
+      func(icon.toString())
+    });
+  }
+
+  getFiltered(url: string) {
+    this.afd.list(url)
+  }
+
   add(url: string, item: any) {
     return this.afd.list(url).push(item);
   }
