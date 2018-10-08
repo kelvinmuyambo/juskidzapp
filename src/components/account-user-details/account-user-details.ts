@@ -26,9 +26,10 @@ export class AccountUserDetailsComponent {
   }
 
   getListings() {
-    this.afAuth.user.subscribe(result => console.log(result));
-    this.firebaseService.get('listing', (listings: Array<Listing>) => {
-      this.listings = listings;
+    // this.afAuth.user.subscribe(result => console.log(result));
+    this.firebaseService.get('listing', (listings) => {
+      console.log(listings, this.listings);
+      // this.listings = listings;
     });
   }
 }

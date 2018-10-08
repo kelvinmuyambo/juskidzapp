@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Listing } from '../../model/listing';
 import { FirebaseServiceProvider } from '../../providers/firebase-service';
 
 @Component({
@@ -7,7 +6,7 @@ import { FirebaseServiceProvider } from '../../providers/firebase-service';
   templateUrl: 'user-listing-item.html'
 })
 export class UserListingItemComponent {
-  @Input() listing: Listing;
+  @Input() listing: any;
   icon: string;
   constructor(private firebaseService: FirebaseServiceProvider) {
 
@@ -15,6 +14,7 @@ export class UserListingItemComponent {
 
   ngOnInit(): void {
     this.getIcon();
+    console.log(this.listing);
   }
 
   getIcon(): any {
@@ -22,6 +22,7 @@ export class UserListingItemComponent {
   }
 
   toggle() {
-    
+    // this.firebaseService.afd.object('/listing/' + this.listing.$key)
+    //   .update({ isActive: !this.listing.isActive }).then(console.log);
   }
 }
