@@ -4,5 +4,5 @@
     <ion-icon name="pin" *ngIf="!icon" color="secondary" style="font-size:2.5em;"></ion-icon>
   </ion-avatar>
   <ion-label>{{listing.title}}</ion-label>
-  <ion-toggle checked="{{listing.isActive}}" (click)="toggle()"></ion-toggle>
+  <ion-toggle checked="{{listing.isActive}}" (ionChange)="toggle()"></ion-toggle>
 </ion-item>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { LoadingController } from 'ionic-angular';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class FirebaseServiceProvider {
@@ -19,9 +20,10 @@ export class FirebaseServiceProvider {
   get(url: string, func: any) {
     var load = this.loadingCtrl.create({ spinner: 'dots' });
     load.present();
-    this.afd.list(url)
-      .valueChanges()
-      .subscribe(result => {
+    this.afd.list(url).snapshotChanges()
+      .pipe(map(changes => changes
+        .map(c => ({ key: c.payload.key, ...c.payload.val() }))))
+      .subscribe((result) => {
         load.dismiss();
         func(result);
       });

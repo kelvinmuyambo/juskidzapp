@@ -7,14 +7,26 @@
 <ion-card>
   <ion-card-content>
     <ion-card-header>
-      My Listing
+      <b>My Listings</b>
     </ion-card-header>
     <ion-list>
       <user-listing-item [listing]="item" *ngFor="let item of listings"></user-listing-item>
+      <p class="text-center" *ngIf="listings"><i *ngIf="listings.length < 1">you have no listings</i></p>
     </ion-list>
   </ion-card-content>
 </ion-card>
 <br />
+<ion-card>
+  <ion-card-content>
+    <ion-card-header>
+      <b>My Events</b>
+    </ion-card-header>
+    <ion-list>
+      <user-listing-item [listing]="item" *ngFor="let item of events"></user-listing-item>
+      <p class="text-center" *ngIf="events"><i *ngIf="events.length < 1">you have no events</i></p>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
 <button (click)="logout()" col-6 offset-5 ion-button icon-start color="secondary" round large>
   <ion-icon name="log-out"></ion-icon>
   Sign Out

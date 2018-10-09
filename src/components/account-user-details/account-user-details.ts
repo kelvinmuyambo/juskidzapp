@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Listing } from '../../model/listing';
 import { FirebaseServiceProvider } from '../../providers/firebase-service';
 
 @Component({
@@ -8,12 +7,14 @@ import { FirebaseServiceProvider } from '../../providers/firebase-service';
   templateUrl: 'account-user-details.html'
 })
 export class AccountUserDetailsComponent {
-  @Input() profile;
+  @Input() profile: firebase.User;
   @Output() result = new EventEmitter<any>();
   loading: boolean;
-  listings: Array<Listing>;
+  listings: any;
+  events: any;
   constructor(private afAuth: AngularFireAuth, public firebaseService: FirebaseServiceProvider) {
     this.getListings();
+    this.getEvents();
   }
 
   ngOnInit(): void {
@@ -26,10 +27,12 @@ export class AccountUserDetailsComponent {
   }
 
   getListings() {
-    // this.afAuth.user.subscribe(result => console.log(result));
-    this.firebaseService.get('listing', (listings) => {
-      console.log(listings, this.listings);
-      // this.listings = listings;
-    });
+    this.firebaseService.get('listing', (listings) =>
+      this.listings = listings.filter(f => f.uid == this.profile.uid));
+  }
+
+  getEvents() {
+    this.firebaseService.get('events', (events) =>
+      this.events = events.filter(f => f.uid == this.profile.uid));
   }
 }
