@@ -32,7 +32,7 @@ export class AccountUserDetailsComponent {
   }
 
   getEvents() {
-    this.firebaseService.get('events', (events) =>
+    this.firebaseService.get('event', (events) =>
       this.events = events.filter(f => f.uid == this.profile.uid));
   }
 }
