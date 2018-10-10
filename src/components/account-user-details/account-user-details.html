@@ -22,7 +22,7 @@
       <b>My Events</b>
     </ion-card-header>
     <ion-list>
-      <user-listing-item [listing]="item" *ngFor="let item of events"></user-listing-item>
+      <user-event-item [event]="item" *ngFor="let item of events"></user-event-item>
       <p class="text-center" *ngIf="events"><i *ngIf="events.length < 1">you have no events</i></p>
     </ion-list>
   </ion-card-content>

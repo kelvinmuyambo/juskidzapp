@@ -23,10 +23,13 @@ export class UserListingItemComponent {
 
   toggle() {
     this.firebaseService.afd.object('/listing/' + this.listing.key)
-      .update({ isActive: !this.listing.isActive }).then(result =>
+      .update({ isActive: !this.listing.isActive }).then(result =>{
+        const action: string = !this.listing.isActive ? ' activated' : ' de-activated';
         this.alertCtrl.create({
-          subTitle: this.listing.title + this.listing.isActive ? ' activated' : ' de-activated',
+          subTitle: this.listing.title + action,
           buttons: ['OK']
-        }).present());
+        }).present()
+
+      });
   }
 }

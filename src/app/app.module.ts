@@ -36,6 +36,7 @@ import { EventItemAddContactComponent } from '../components/event-item-add-conta
 import { EventItemAddImagesComponent } from '../components/event-item-add-images/event-item-add-images';
 import { EventItemAddDatesComponent } from '../components/event-item-add-dates/event-item-add-dates';
 import { UserListingItemComponent } from '../components/user-listing-item/user-listing-item';
+import { UserEventItemComponent } from '../components/user-event-item/user-event-item';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCdHuyelKbfYDaLKxnlxDL2aQWe0Uf9heE",
@@ -70,7 +71,8 @@ const firebaseConfig = {
     AccountAnonymousComponent,
     AccountAnonymousLoginComponent,
     AccountUserDetailsComponent,
-    UserListingItemComponent
+    UserListingItemComponent,
+    UserEventItemComponent
   ],
   imports: [
     BrowserModule,

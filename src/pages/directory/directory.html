@@ -7,9 +7,21 @@
   <h1 ion-text color="primary">Directory</h1>
   <p ion-text color="secondary">All the contact information your need..</p>
   <br />
-  <button *ngIf="user" (click)="addNew()" ion-button icon-start color="primary" round col-4 offset-8>
-    <ion-icon name="add-circle"></ion-icon>
-    New
-  </button>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button (click)="find()" ion-button icon-start color="secondary" round col-12>
+          <ion-icon name="search"></ion-icon>
+          Find
+        </button>
+      </ion-col>
+      <ion-col>
+        <button *ngIf="user" (click)="addNew()" ion-button icon-start color="primary" round col-12>
+          <ion-icon name="add-circle"></ion-icon>
+          New
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <listing-item *ngFor="let listing of listings" [listing]="listing" (result)="openListingDetails($event)"></listing-item>
 </ion-content>
