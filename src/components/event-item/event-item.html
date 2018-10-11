@@ -1,29 +1,22 @@
-<!-- <ion-card>
-  <img src="https://atlantablackstar.com/wp-content/uploads/2015/03/birthday-cake.jpg" />
-  <ion-card-content>
-    <ion-card-title ion-text color="secondary">
-      Birthday Party Host
-    </ion-card-title>
-    <p>
-      Assist the Birthday Party Coordinator in ncessary tasks. The Bolingbrook Park District is seeking a part time
-      Birthday Party Host to work at our Pelican Harbor...
-    </p>
-  </ion-card-content>
-</ion-card> -->
-
-<ion-card>
+<ion-card (click)="view()">
   <img *ngIf="icon" src="{{icon}}">
   <ion-icon name="aperture" *ngIf="!icon" color="secondary" style="font-size:10em; text-align: center;width: 100%;"></ion-icon>
   <ion-card-content>
     <p ion-text color="primary">{{event.title}}</p>
     <p ion-text><b><small>{{event.town}}</small></b></p>
-    <p ion-text><small>{{event.startDate  | date : 'EEE dd MMM yyy'}}</small></p>
+    <p ion-text><small>{{event.startDate | date : 'EEE dd MMM yyy'}}</small></p>
     <ion-row>
       <ion-col>
         <button ion-button icon-start clear small color="secondary">
           <ion-icon name="thumbs-up"></ion-icon>
           <div>12</div>
         </button>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-icon name="hand" color="primary"></ion-icon>
+          {{getRsvps()}}
+        </ion-item>
       </ion-col>
       <ion-col>
         <button ion-button icon-start clear small (click)="view()">

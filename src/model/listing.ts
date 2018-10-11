@@ -1,5 +1,5 @@
 export class Listing {
-    $key: string;
+    key: string;
     title: string;
     description: string;
     town: string;

@@ -10,6 +10,7 @@ export class ListingItemComponent {
   icon: string;
   @Input() listing: Listing;
   @Output() result = new EventEmitter<any>();
+  iconLoaded: boolean;
   constructor(private firebaseSvc: FirebaseServiceProvider) {
   }
 
@@ -21,10 +22,12 @@ export class ListingItemComponent {
     this.firebaseSvc.getNoLoad('/listing-image/' + this.listing.image, (icon) => {
       this.icon = icon.toString();
       this.listing.image = this.icon;
+      this.iconLoaded = true;
     });
   }
 
   view() {
+    if (!this.iconLoaded) return;
     this.result.emit(this.listing);
   }
 }

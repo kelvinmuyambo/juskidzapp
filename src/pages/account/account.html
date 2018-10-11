@@ -4,6 +4,6 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <account-anonymous *ngIf="!user" (result)="reload($event)"></account-anonymous>
-  <account-user-details *ngIf="user" [profile]="user" (result)="reload($event)"></account-user-details>
+  <account-anonymous *ngIf="!user" (result)="getUserInformation($event)"></account-anonymous>
+  <account-user-details *ngIf="user" [profile]="user" (result)="getUserInformation($event)"></account-user-details>
 </ion-content>

@@ -20,15 +20,31 @@
       </ion-slide>
     </ion-slides>
   </div>
+  <div padding>
+    <h1 ion-text color="primary">{{listing.title}}</h1>
+    <p ion-text color="secondary">{{listing.description}}</p>
+    <br />
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button (click)="rate('likes')" [disabled]="hasRating()" ion-button color="secondary" round col-12>
+            <ion-icon name="thumbs-up"></ion-icon>
+            &nbsp;&nbsp;{{getRating('likes')}}
+          </button>
+        </ion-col>
+        <ion-col>
+          <button (click)="rate('dislikes')" [disabled]="hasRating()" ion-button color="danger" round col-12>
+            <ion-icon name="thumbs-down"></ion-icon>
+            &nbsp;&nbsp;{{getRating('dislikes')}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
   <ion-card>
-    <ion-card-header>
-      <h1 ion-text color="primary">{{listing.title}}</h1>
-      <p ion-text color="secondary">{{listing.description}}</p>
-      <br />
-      <ion-icon name="thumbs-up" col-2 offset-4 color="secondary" class="large">&nbsp;28</ion-icon>
-      <ion-icon name="thumbs-down" col-2 color="danger" class="large">&nbsp;6</ion-icon>
-    </ion-card-header>
     <ion-card-content>
+      <h2 class="hd_primary text-center">Contact Information</h2>
+      <br />
       <ion-list no-lines>
         <ion-item *ngFor="let item of listing.contact_infomation">
           <h2>
@@ -39,5 +55,34 @@
     </ion-card-content>
   </ion-card>
   <br />
+  <ion-card>
+    <ion-card-content>
+      <h2 class="hd_primary text-center">Feedback</h2>
+      <br />
+      <ion-list *ngIf="user">
+        <ion-item>
+          <ion-label stacked>Comment</ion-label>
+          <ion-textarea type="text" [(ngModel)]="comment"></ion-textarea>
+        </ion-item>
+        <br />
+        <button ion-button color="secondary" [disabled]="comment.length < 3" round col-8 offset-2 (click)="submit()"
+          icon-end large>
+          Post
+        </button>
+      </ion-list>
+      <br />
+
+      <ion-list no-lines>
+        <p class="text-center" *ngIf="!listing.comments"><small>no feedback</small></p>
+        <p *ngFor="let item of listing.comments">
+          <b>{{item.user.name}}</b> : {{item.comment}}
+          <br />
+          <i><b><small>{{item.date | date : 'dd MMM yyyy'}}</small></b></i>
+          <br />
+          <br />
+        </p>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
   <br />
 </ion-content>

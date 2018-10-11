@@ -16,5 +16,5 @@ export class Event {
     startTime: any = '10:00';
     endTime: any = '16:00';
     uid: string;
-
+    rsvp: Array<any>;
 }

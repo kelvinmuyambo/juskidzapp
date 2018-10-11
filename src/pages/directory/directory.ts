@@ -23,7 +23,7 @@ export class DirectoryPage {
   }
 
   getListings() {
-    this.firebaseService.get('listing', (listings: Array<Listing>) =>{
+    this.firebaseService.get('listing', (listings: Array<Listing>) => {
       this.listings = listings.filter(f => f.isActive);
     });
   }
