@@ -3,7 +3,8 @@
   <ion-icon name="aperture" *ngIf="!icon" color="secondary" style="font-size:10em; text-align: center;width: 100%;"></ion-icon>
   <ion-card-content>
     <p ion-text color="primary">{{event.title}}</p>
-    <p ion-text><b><small>{{event.town}}</small></b></p>
+    <p><b ion-text color="secondary">{{event.category}}</b></p>
+    <p ion-text><b><small>{{event.town}}</small></b>&nbsp;&nbsp;</p>
     <p ion-text><small>{{event.startDate | date : 'EEE dd MMM yyy'}}</small></p>
     <ion-row>
       <ion-col>

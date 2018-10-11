@@ -50,7 +50,6 @@ export class EventItemAddImagesComponent {
     images.push(new ListingImage(this.addImage(3)));
     this.event.images = images;
     this.event.date = new Date();
-    this.event.isActive = false;
     this.firebaseService.add('event', this.event);
     this.alertCtrl.create({
       title: 'Event Added',

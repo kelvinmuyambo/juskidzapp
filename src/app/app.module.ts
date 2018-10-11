@@ -37,6 +37,8 @@ import { EventItemAddImagesComponent } from '../components/event-item-add-images
 import { EventItemAddDatesComponent } from '../components/event-item-add-dates/event-item-add-dates';
 import { UserListingItemComponent } from '../components/user-listing-item/user-listing-item';
 import { UserEventItemComponent } from '../components/user-event-item/user-event-item';
+import { FilterItemTownComponent } from '../components/filter-item-town/filter-item-town';
+import { FilterItemCategoryComponent } from '../components/filter-item-category/filter-item-category';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCdHuyelKbfYDaLKxnlxDL2aQWe0Uf9heE",
@@ -57,6 +59,8 @@ const firebaseConfig = {
     AccountPage,
     EventsPage,
     TabsPage,
+    FilterItemTownComponent,
+    FilterItemCategoryComponent,
     EventItemComponent,
     EventItemAddComponent,
     EventItemAddContactComponent,
@@ -91,6 +95,8 @@ const firebaseConfig = {
     AccountPage,
     EventsPage,
     TabsPage,
+    FilterItemTownComponent,
+    FilterItemCategoryComponent,
     AccountAnonymousLoginComponent,
     EventItemAddComponent,
     EventItemAddContactComponent,

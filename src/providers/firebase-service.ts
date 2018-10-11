@@ -40,6 +40,17 @@ export class FirebaseServiceProvider {
       });
   }
 
+  takeOrderBy(url: string, count: number, order: string, func: any) {
+    var load = this.loadingCtrl.create({ spinner: 'dots' });
+    load.present();
+    this.afd.list(url, ref => ref.orderByChild(order).limitToFirst(count))
+      .valueChanges()
+      .subscribe(result => {
+        load.dismiss();
+        func(result);
+      });
+  }
+
   getIcon(url: string, func: any) {
     this.getNoLoad(url, (icon) => {
       func(icon.toString())
@@ -54,15 +65,7 @@ export class FirebaseServiceProvider {
     return this.afd.list(url).push(item);
   }
 
-  // getShoppingItems() {
-  //   return this.afd.list('/shoppingItems/');
-  // }
-
-  // addItem(name) {
-  //   this.afd.list('/shoppingItems/').push(name);
-  // }
-
-  // removeItem(id) {
-  //   this.afd.list('/shoppingItems/').remove(id);
-  // }
+  remove(url, id) {
+    this.afd.list(url).remove(id);
+  }
 }

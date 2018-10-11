@@ -26,7 +26,7 @@
         <ion-item>
           <ion-label>Listing Category</ion-label>
           <ion-select [(ngModel)]="listing.category">
-            <ion-option [value]="c" *ngFor="let c of categories">{{c.name}}</ion-option>
+            <ion-option [value]="c.name" *ngFor="let c of categories">{{c.name}}</ion-option>
           </ion-select>
         </ion-item>
         <br />

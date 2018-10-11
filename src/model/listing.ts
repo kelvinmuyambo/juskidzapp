@@ -6,7 +6,7 @@ export class Listing {
     category: string;
     image: string;
     images: Array<any>;
-    isActive: boolean = false;
+    isActive: boolean = true;
     uid: string;
     date: Date = new Date();
     likes: Array<string> = [];

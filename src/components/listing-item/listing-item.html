@@ -11,7 +11,8 @@
         </h2>
         <p>{{listing.description}}</p>
         <p ion-text color="secondary">
-          <small><b>{{listing.town}}</b></small>
+          <small><b>{{listing.town}}</b></small>&nbsp;&nbsp;
+          <small ion-text color="primary">{{listing.category}}</small>
         </p>
         <button (click)="view()" ion-button clear item-end color="theme">View</button>
       </ion-item>

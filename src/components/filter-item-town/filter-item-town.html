@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><img height="50" src="../../assets/imgs/img_logo_light.png" /></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <h1 class="hd_primary text-center">Find {{type}} by Town</h1>
+      <br />
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12 *ngFor="let item of towns" (click)="select(item)">
+            <ion-item>
+              <ion-icon name="pin" item-start></ion-icon>
+              {{item.key}}
+              <ion-badge item-end>{{item.data.length}}</ion-badge>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <br />
+    </ion-card-content>
+  </ion-card>
+</ion-content>

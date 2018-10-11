@@ -9,19 +9,20 @@
   <br />
   <ion-grid>
     <ion-row>
+      <ion-col *ngIf="user">
+        <button (click)="addNew()" ion-button icon-start color="primary" round col-12>
+          <ion-icon name="add-circle"></ion-icon>
+          New
+        </button>
+      </ion-col>
       <ion-col>
         <button (click)="find()" ion-button icon-start color="secondary" round col-12>
           <ion-icon name="search"></ion-icon>
           Find
         </button>
       </ion-col>
-      <ion-col>
-        <button *ngIf="user" (click)="addNew()" ion-button icon-start color="primary" round col-12>
-          <ion-icon name="add-circle"></ion-icon>
-          New
-        </button>
-      </ion-col>
     </ion-row>
   </ion-grid>
+  <p class="text-center" ion-text color="secondary" *ngIf="filter">{{filter.key}}</p>
   <listing-item *ngFor="let listing of listings" [listing]="listing" (result)="openListingDetails($event)"></listing-item>
 </ion-content>

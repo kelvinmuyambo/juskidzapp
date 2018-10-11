@@ -36,7 +36,6 @@ export class ListingItemAddImagesComponent {
     images.push(new ListingImage(this.addImage(3)));
     this.listing.images = images;
     this.listing.date = new Date();
-    this.listing.isActive = false;
     this.firebaseService.add('listing', this.listing);
     this.alertCtrl.create({
       title: 'Listing Added',

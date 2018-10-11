@@ -15,6 +15,8 @@ import { EventItemAddImagesComponent } from './event-item-add-images/event-item-
 import { EventItemAddDatesComponent } from './event-item-add-dates/event-item-add-dates';
 import { UserListingItemComponent } from './user-listing-item/user-listing-item';
 import { UserEventItemComponent } from './user-event-item/user-event-item';
+import { FilterItemTownComponent } from './filter-item-town/filter-item-town';
+import { FilterItemCategoryComponent } from './filter-item-category/filter-item-category';
 @NgModule({
 	declarations: [ListingItemComponent,
     AccountAnonymousComponent,
@@ -31,7 +33,10 @@ import { UserEventItemComponent } from './user-event-item/user-event-item';
     EventItemAddImagesComponent,
     EventItemAddDatesComponent,
     UserListingItemComponent,
-    UserEventItemComponent],
+    UserEventItemComponent,
+    FilterItemTownComponent,
+    FilterItemTownComponent,
+    FilterItemCategoryComponent],
 	imports: [],
 	exports: [ListingItemComponent,
     AccountAnonymousComponent,
@@ -48,6 +53,9 @@ import { UserEventItemComponent } from './user-event-item/user-event-item';
     EventItemAddImagesComponent,
     EventItemAddDatesComponent,
     UserListingItemComponent,
-    UserEventItemComponent]
+    UserEventItemComponent,
+    FilterItemTownComponent,
+    FilterItemTownComponent,
+    FilterItemCategoryComponent]
 })
 export class ComponentsModule {}
