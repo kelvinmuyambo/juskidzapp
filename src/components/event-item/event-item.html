@@ -2,28 +2,22 @@
   <img *ngIf="icon" src="{{icon}}">
   <ion-icon name="aperture" *ngIf="!icon" color="secondary" style="font-size:10em; text-align: center;width: 100%;"></ion-icon>
   <ion-card-content>
-    <p ion-text color="primary">{{event.title}}</p>
+    <h2 ion-text color="primary">{{event.title}}</h2>
     <p><b ion-text color="secondary">{{event.category}}</b></p>
     <p ion-text><b><small>{{event.town}}</small></b>&nbsp;&nbsp;</p>
     <p ion-text><small>{{event.startDate | date : 'EEE dd MMM yyy'}}</small></p>
     <ion-row>
       <ion-col>
-        <button ion-button icon-start clear small color="secondary">
-          <ion-icon name="thumbs-up"></ion-icon>
-          <div>12</div>
-        </button>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-icon name="hand" color="primary"></ion-icon>
-          {{getRsvps()}}
+        <ion-item large>
+          <ion-icon name="thumbs-up" color="secondary"></ion-icon> &nbsp;
+          {{getLikes()}}
         </ion-item>
       </ion-col>
       <ion-col>
-        <button ion-button icon-start clear small (click)="view()">
-          <ion-icon name="eye"></ion-icon>
-          <div>View </div>
-        </button>
+        <ion-item large>
+          <ion-icon name="hand" color="primary"></ion-icon> &nbsp;
+          {{getRsvps()}}
+        </ion-item>
       </ion-col>
     </ion-row>
   </ion-card-content>

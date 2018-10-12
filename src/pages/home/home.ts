@@ -23,10 +23,10 @@ export class HomePage {
   }
 
   gotoListings(){
-    this.navCtrl.setRoot(DirectoryPage);
+    this.navCtrl.push(DirectoryPage);
   }
 
   gotoEvents(){
-    this.navCtrl.setRoot(EventsPage);
+    this.navCtrl.push(EventsPage);
   }
 }

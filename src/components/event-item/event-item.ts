@@ -35,4 +35,8 @@ export class EventItemComponent {
   getRsvps() {
     return this.event.rsvp ? this.event.rsvp.length : 0;
   }
+
+  getLikes(){
+    return this.event.likes ? this.event.likes.length : 0;
+  }
 }
