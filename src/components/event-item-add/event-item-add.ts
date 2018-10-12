@@ -48,4 +48,8 @@ export class EventItemAddComponent {
     };
     reader.readAsDataURL(input.files[0]);
   }
+
+  isValid(): boolean {
+    return !(this.event.title == null || this.event.description == null || this.event.category == null);
+  }
 }

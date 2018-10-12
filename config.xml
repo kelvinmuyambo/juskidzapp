@@ -90,5 +90,7 @@
         <variable name="APP_NAME" value="Just Kidz" />
         <variable name="FACEBOOK_ANDROID_SDK_VERSION" value="4.36.0" />
     </plugin>
+    <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
+    <plugin name="cordova-plugin-email-composer" spec="^0.8.15" />
     <engine name="android" spec="^7.1.1" />
 </widget>

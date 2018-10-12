@@ -48,4 +48,8 @@ export class ListingItemAddComponent {
     };
     reader.readAsDataURL(input.files[0]);
   }
+
+  isValid(): boolean {
+    return !(this.listing.title == null || this.listing.description == null || this.listing.category == null);
+  }
 }

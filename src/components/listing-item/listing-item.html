@@ -14,16 +14,16 @@
           <small><b>{{listing.town}}</b></small>&nbsp;&nbsp;
           <small ion-text color="primary">{{listing.category}}</small>
         </p>
-        <button (click)="view()" ion-button clear item-end color="theme">View</button>
+        <button (click)="view()" ion-button clear item-end color="theme" icon-only large>
+          <ion-icon ios="ios-folder-open-outline" md="ios-folder-open-outline"></ion-icon>
+        </button>
       </ion-item>
       <ion-item-options side="right">
-        <button ion-button color="secondary">
+        <button ion-button color="secondary" icon-only (click)="call()" large>
           <ion-icon name="call"></ion-icon>
-          Call
         </button>
-        <button ion-button color="primary">
+        <button ion-button color="primary" icon-only (click)="email()" large>
           <ion-icon name="mail"></ion-icon>
-          Email
         </button>
       </ion-item-options>
     </ion-item-sliding>

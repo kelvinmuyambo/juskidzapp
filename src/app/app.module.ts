@@ -39,6 +39,8 @@ import { UserListingItemComponent } from '../components/user-listing-item/user-l
 import { UserEventItemComponent } from '../components/user-event-item/user-event-item';
 import { FilterItemTownComponent } from '../components/filter-item-town/filter-item-town';
 import { FilterItemCategoryComponent } from '../components/filter-item-category/filter-item-category';
+import { CallNumber } from '@ionic-native/call-number';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCdHuyelKbfYDaLKxnlxDL2aQWe0Uf9heE",
@@ -114,6 +116,8 @@ const firebaseConfig = {
     FirebaseServiceProvider,
     GooglePlus,
     Facebook,
+    CallNumber,
+    EmailComposer,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

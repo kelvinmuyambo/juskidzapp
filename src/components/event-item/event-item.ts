@@ -36,7 +36,7 @@ export class EventItemComponent {
     return this.event.rsvp ? this.event.rsvp.length : 0;
   }
 
-  getLikes(){
+  getLikes() {
     return this.event.likes ? this.event.likes.length : 0;
   }
 }
