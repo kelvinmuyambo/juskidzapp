@@ -4,12 +4,11 @@
     <ion-icon name="pin" *ngIf="!icon" color="secondary" style="font-size:2.5em;"></ion-icon>
   </ion-avatar>
   <ion-label>{{event.title}}</ion-label>
-  <button *ngIf="!event.hasPaid && event.paymentStatus == 0" (click)="pay()" ion-button item-end color="theme"
-    icon-only large>
-    <ion-icon name="cash"></ion-icon> Pay
+  <button *ngIf="!event.hasPaid &&  (event.paymentStatus == 0 || !event.paymentStatus)" (click)="pay()" clear ion-button
+    item-end color="theme" icon-only>
+    <ion-icon name="cash"></ion-icon> &nbsp; Make Payment
   </button>
-  <button *ngIf="!event.hasPaid && event.paymentStatus != 0" clear [disabled]="true" ion-button item-end color="secondary"
-    icon-only large>
+  <button *ngIf="!event.hasPaid && event.paymentStatus == 1" clear ion-button item-end color="secondary" icon-only>
     Verification
   </button>
   <ion-toggle *ngIf="event.hasPaid" checked="{{event.isActive}}" (ionChange)="toggle()"></ion-toggle>

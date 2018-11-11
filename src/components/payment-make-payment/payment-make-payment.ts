@@ -12,18 +12,16 @@ export class PaymentMakePaymentComponent {
   paymentType: number;
   itemDetails: any;
   hasPaid: boolean;
-  ecocash: '*151*1*1*07753066052*10#';
   message: string;
   constructor(public navCtrl: NavController, params: NavParams, private firebaseService: FirebaseServiceProvider,
     private callNumber: CallNumber, public alertCtrl: AlertController) {
     this.paymentType = params.data.type;
     this.itemDetails = params.data.details;
     this.hasPaid = this.itemDetails.paymentStatus == 1;
-    console.log(this.itemDetails);
   }
 
-  makePayment() {
-    this.callNumber.callNumber(this.ecocash, true)
+  makePayment(ecocash) {
+    this.callNumber.callNumber(ecocash, false)
       .then(res => console.log('Launched dialer!', res))
       .catch(err => console.log('Error launching dialer', err));
   }
