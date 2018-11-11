@@ -10,7 +10,7 @@
       <b>My Listings</b>
     </ion-card-header>
     <ion-list>
-      <user-listing-item [listing]="item" *ngFor="let item of listings"></user-listing-item>
+      <user-listing-item [listing]="item" *ngFor="let item of listings" (makePayment)="makePayment($event)"></user-listing-item>
       <p class="text-center" *ngIf="listings"><i *ngIf="listings.length < 1">you have no listings</i></p>
     </ion-list>
   </ion-card-content>
@@ -22,7 +22,7 @@
       <b>My Events</b>
     </ion-card-header>
     <ion-list>
-      <user-event-item [event]="item" *ngFor="let item of events"></user-event-item>
+      <user-event-item [event]="item" *ngFor="let item of events" (makePayment)="makePayment($event)"></user-event-item>
       <p class="text-center" *ngIf="events"><i *ngIf="events.length < 1">you have no events</i></p>
     </ion-list>
   </ion-card-content>

@@ -1,6 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FirebaseServiceProvider } from '../../providers/firebase-service';
+import { NavController } from 'ionic-angular';
+import { PaymentMakePaymentComponent } from '../payment-make-payment/payment-make-payment';
 
 @Component({
   selector: 'account-user-details',
@@ -12,7 +14,7 @@ export class AccountUserDetailsComponent {
   loading: boolean;
   listings: any;
   events: any;
-  constructor(private afAuth: AngularFireAuth, public firebaseService: FirebaseServiceProvider) {
+  constructor(private afAuth: AngularFireAuth, public navCtrl: NavController, public firebaseService: FirebaseServiceProvider) {
     this.getListings();
     this.getEvents();
   }
@@ -34,5 +36,9 @@ export class AccountUserDetailsComponent {
   getEvents() {
     this.firebaseService.get('event', (events) =>
       this.events = events.filter(f => f.uid == this.profile.uid));
+  }
+
+  makePayment($event) {
+    this.navCtrl.push(PaymentMakePaymentComponent, $event);
   }
 }

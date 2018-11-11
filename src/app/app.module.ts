@@ -41,6 +41,7 @@ import { FilterItemTownComponent } from '../components/filter-item-town/filter-i
 import { FilterItemCategoryComponent } from '../components/filter-item-category/filter-item-category';
 import { CallNumber } from '@ionic-native/call-number';
 import { EmailComposer } from '@ionic-native/email-composer';
+import { PaymentMakePaymentComponent } from '../components/payment-make-payment/payment-make-payment';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCdHuyelKbfYDaLKxnlxDL2aQWe0Uf9heE",
@@ -78,7 +79,8 @@ const firebaseConfig = {
     AccountAnonymousLoginComponent,
     AccountUserDetailsComponent,
     UserListingItemComponent,
-    UserEventItemComponent
+    UserEventItemComponent,
+    PaymentMakePaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -108,7 +110,8 @@ const firebaseConfig = {
     ListingItemAddComponent,
     ListingItemAddContactComponent,
     ListingItemAddImagesComponent,
-    ListingItemDetailsComponent
+    ListingItemDetailsComponent,
+    PaymentMakePaymentComponent
   ],
   providers: [
     StatusBar,

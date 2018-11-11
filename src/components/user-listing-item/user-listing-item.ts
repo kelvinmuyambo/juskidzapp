@@ -1,13 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FirebaseServiceProvider } from '../../providers/firebase-service';
 import { AlertController } from 'ionic-angular';
+import { Listing } from '../../model/listing';
 
 @Component({
   selector: 'user-listing-item',
   templateUrl: 'user-listing-item.html'
 })
 export class UserListingItemComponent {
-  @Input() listing: any;
+  @Input() listing: Listing;
+  @Output() makePayment = new EventEmitter<any>();
   icon: string;
   constructor(private firebaseService: FirebaseServiceProvider, public alertCtrl: AlertController) {
 
@@ -30,5 +32,13 @@ export class UserListingItemComponent {
           buttons: ['OK']
         }).present();
       });
+  }
+
+  pay() {
+    this.listing.image = this.icon;
+    this.makePayment.emit({
+      type: 1,
+      details: this.listing
+    })
   }
 }

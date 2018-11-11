@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><img height="50" src="../../assets/imgs/img_logo_light.png" /></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <h2 class="hd_primary" padding>
+      Make Payment
+    </h2>
+    <img col-6 *ngIf="itemDetails" offset-3 src="{{itemDetails.image}}" />
+    <br />
+    <ion-card-content *ngIf="!hasPaid">
+      <h3>
+        Your are about to pay $10,00 for this event to be published.
+        Payment will be made via EcoCash.
+      </h3>
+      <br />
+      <button (click)="makePayment()" col-8 offset-2 ion-button icon-start color="secondary" round large>
+        <ion-icon name="cash"></ion-icon>
+        Pay
+      </button>
+      <br />
+      <button (click)="alreadyPaid()" col-8 offset-2 ion-button icon-start color="primary" round large clear>
+        Already Paid?
+      </button>
+    </ion-card-content>
+    <ion-card-content *ngIf="hasPaid && itemDetails.paymentStatus != 1">
+      <br />
+      <p>
+        Please send us the ecocash confirmation message. Your payment will be confirmed in 24 working hours.
+      </p>
+      <br />
+      <br />
+      <ion-list>
+        <ion-item>
+          <ion-label stacked>Confirmation Message</ion-label>
+          <ion-textarea type="text" [(ngModel)]="message"></ion-textarea>
+        </ion-item>
+      </ion-list>
+      <button (click)="confirmPayment()" col-8 offset-2 ion-button icon-start color="secondary" round large>
+        <ion-icon name="checkmark-circle"></ion-icon>
+        Confirm
+      </button>
+      <br />
+    </ion-card-content>
+
+    <ion-card-content *ngIf="hasPaid && itemDetails.paymentStatus == 1">
+      <br />
+      <p>
+        We received your payment confirmation. Please be patient a while longer while we make verifications.
+      </p>
+      <br />
+    </ion-card-content>
+  </ion-card>
+</ion-content>

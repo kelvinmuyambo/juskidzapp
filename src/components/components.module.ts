@@ -17,6 +17,7 @@ import { UserListingItemComponent } from './user-listing-item/user-listing-item'
 import { UserEventItemComponent } from './user-event-item/user-event-item';
 import { FilterItemTownComponent } from './filter-item-town/filter-item-town';
 import { FilterItemCategoryComponent } from './filter-item-category/filter-item-category';
+import { PaymentMakePaymentComponent } from './payment-make-payment/payment-make-payment';
 @NgModule({
 	declarations: [ListingItemComponent,
     AccountAnonymousComponent,
@@ -36,7 +37,8 @@ import { FilterItemCategoryComponent } from './filter-item-category/filter-item-
     UserEventItemComponent,
     FilterItemTownComponent,
     FilterItemTownComponent,
-    FilterItemCategoryComponent],
+    FilterItemCategoryComponent,
+    PaymentMakePaymentComponent],
 	imports: [],
 	exports: [ListingItemComponent,
     AccountAnonymousComponent,
@@ -56,6 +58,7 @@ import { FilterItemCategoryComponent } from './filter-item-category/filter-item-
     UserEventItemComponent,
     FilterItemTownComponent,
     FilterItemTownComponent,
-    FilterItemCategoryComponent]
+    FilterItemCategoryComponent,
+    PaymentMakePaymentComponent]
 })
 export class ComponentsModule {}
