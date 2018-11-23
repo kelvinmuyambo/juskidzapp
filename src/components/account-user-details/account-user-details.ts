@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { FirebaseServiceProvider } from '../../providers/firebase-service';
 import { NavController } from 'ionic-angular';
 import { PaymentMakePaymentComponent } from '../payment-make-payment/payment-make-payment';
+import { ProfileDetailsComponent } from '../profile-details/profile-details';
 
 @Component({
   selector: 'account-user-details',
@@ -40,5 +41,9 @@ export class AccountUserDetailsComponent {
 
   makePayment($event) {
     this.navCtrl.push(PaymentMakePaymentComponent, $event);
+  }
+
+  openProfile(){
+    this.navCtrl.push(ProfileDetailsComponent, this.profile.uid);
   }
 }
