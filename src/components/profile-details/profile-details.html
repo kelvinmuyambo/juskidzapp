@@ -8,7 +8,17 @@
     </ion-item>
   </ion-navbar>
 </ion-header>
+<ion-content *ngIf="profile">
 
-<ion-content>
-
+</ion-content>
+<ion-content *ngIf="!profile">
+  <h1 class="text-center">
+    <ion-icon name="sad" class="sad" large color="primary"></ion-icon>
+  </h1>
+  <h4 class="hd_primary text-center"></h4>
+  <p class="hd_secondary text-center">Your profile is incomplete</p>
+  <button (click)="updateProfile()" col-6 offset-3 ion-button icon-start color="secondary" round>
+    <ion-icon name="checkmark"></ion-icon>
+    Complete Profile
+  </button>
 </ion-content>

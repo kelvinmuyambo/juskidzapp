@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { FirebaseServiceProvider } from '../../providers/firebase-service';
 import { Profile } from '../../model/profile';
+import { ProfileDetailsAddComponent } from '../profile-details-add/profile-details-add';
 
 
 @Component({
@@ -19,5 +20,9 @@ export class ProfileDetailsComponent {
   getProfile() {
     this.firebaseService.get('/profile-details/', (profiles: Profile[]) =>
       this.profile = profiles.find(f => f.uid == this.uid));
+  }
+
+  updateProfile() {
+    this.navCtrl.push(ProfileDetailsAddComponent, this.uid);
   }
 }

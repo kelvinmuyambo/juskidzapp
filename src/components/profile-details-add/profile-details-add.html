@@ -1,4 +1,45 @@
-<!-- Generated template for the ProfileDetailsAddComponent component -->
-<div>
-  {{text}}
-</div>
+<ion-header>
+  <ion-navbar>
+    <ion-item>
+      <ion-avatar item-start>
+        <img height="50" width="50" src="../../assets/imgs/logo.png" />
+      </ion-avatar>
+      <h2>Update Profile</h2>
+    </ion-item>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-label stacked class="upload_label">tap below to select a profile picture</ion-label>
+      <br />
+      <label class="fileContainer">
+        <img id="listing-image" class="upload_image" src="../../assets/imgs/upload_image.png" />
+        <input type="file" (change)="fileChange($event)" />
+      </label>
+      <br />
+      <ion-list>
+        <ion-item>
+          <ion-label stacked>First Name</ion-label>
+          <ion-input type="text" value="" [(ngModel)]="profile.first_name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Last Name</ion-label>
+          <ion-input type="text" [(ngModel)]="profile.last_name"></ion-input>
+        </ion-item>
+        <br />
+        <ion-item>
+          <ion-label>Gender</ion-label>
+          <ion-select [(ngModel)]="profile.gender">
+            <ion-option [value]="g.name" *ngFor="let g of genders">{{g.name}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <br />
+      </ion-list>
+      <button ion-button color="primary" round col-8 offset-2 (click)="submit()" icon-start large>
+        <ion-icon name="checkmark-circle"></ion-icon>
+        Update
+      </button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

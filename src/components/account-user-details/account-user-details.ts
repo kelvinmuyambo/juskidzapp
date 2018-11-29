@@ -4,6 +4,7 @@ import { FirebaseServiceProvider } from '../../providers/firebase-service';
 import { NavController } from 'ionic-angular';
 import { PaymentMakePaymentComponent } from '../payment-make-payment/payment-make-payment';
 import { ProfileDetailsComponent } from '../profile-details/profile-details';
+import { Profile } from '../../model/profile';
 
 @Component({
   selector: 'account-user-details',
@@ -15,9 +16,11 @@ export class AccountUserDetailsComponent {
   loading: boolean;
   listings: any;
   events: any;
+  profileDetails: Profile;
   constructor(private afAuth: AngularFireAuth, public navCtrl: NavController, public firebaseService: FirebaseServiceProvider) {
     this.getListings();
     this.getEvents();
+    this.getProfile();
   }
 
   ngOnInit(): void {
@@ -27,6 +30,11 @@ export class AccountUserDetailsComponent {
     this.loading = true;
     this.afAuth.auth.signOut();
     this.result.emit(null);
+  }
+
+  getProfile() {
+    this.firebaseService.get('/profile-details/', (profiles: Profile[]) =>
+      this.profileDetails = profiles.find(f => f.uid == this.profile.uid));
   }
 
   getListings() {
@@ -43,7 +51,7 @@ export class AccountUserDetailsComponent {
     this.navCtrl.push(PaymentMakePaymentComponent, $event);
   }
 
-  openProfile(){
+  openProfile() {
     this.navCtrl.push(ProfileDetailsComponent, this.profile.uid);
   }
 }

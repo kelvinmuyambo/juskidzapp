@@ -43,6 +43,7 @@ import { CallNumber } from '@ionic-native/call-number';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { PaymentMakePaymentComponent } from '../components/payment-make-payment/payment-make-payment';
 import { ProfileDetailsComponent } from '../components/profile-details/profile-details';
+import { ProfileDetailsAddComponent } from '../components/profile-details-add/profile-details-add';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCdHuyelKbfYDaLKxnlxDL2aQWe0Uf9heE",
@@ -82,7 +83,8 @@ const firebaseConfig = {
     UserListingItemComponent,
     UserEventItemComponent,
     PaymentMakePaymentComponent,
-    ProfileDetailsComponent
+    ProfileDetailsComponent,
+    ProfileDetailsAddComponent
   ],
   imports: [
     BrowserModule,
@@ -114,7 +116,8 @@ const firebaseConfig = {
     ListingItemAddImagesComponent,
     ListingItemDetailsComponent,
     PaymentMakePaymentComponent,
-    ProfileDetailsComponent
+    ProfileDetailsComponent,
+    ProfileDetailsAddComponent
   ],
   providers: [
     StatusBar,
